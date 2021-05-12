@@ -22,10 +22,8 @@ const Home = () => {
     xhttp.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
         responseData = JSON.parse(this.responseText);
-        console.log(responseData);
         setBaseCurr(responseData.base);
         setRates(responseData.rates);
-        console.log(responseData.rates);
       }
     };
     xhttp.open("GET", "https://api.ratesapi.io/api/latest", true);
